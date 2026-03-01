@@ -1,6 +1,7 @@
 extends Sprite2D
 
 @export var next_scene: PackedScene
+@export var player: CharacterBody2D
 
 var level_beat = false
 @onready var icon = $EIcon
@@ -20,6 +21,7 @@ func _process(delta: float) -> void:
 	
 	if (level_beat && Input.is_action_pressed("interact")):
 		get_tree().change_scene_to_file(next_scene.resource_path);
+		player.reset_health_signals()
 
 func check_all_enemies_gone():
 	var enemies_left = get_tree().get_nodes_in_group("enemies").size()

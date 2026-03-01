@@ -161,11 +161,12 @@ position = Vector2(992.00006, 548)
 scale = Vector2(0.21839333, 0.69479406)
 shape = SubResource("RectangleShape2D_ypqb5")
 
-[node name="Hole" type="Sprite2D" parent="." unique_id=1885946384]
+[node name="Hole" type="Sprite2D" parent="." unique_id=1885946384 node_paths=PackedStringArray("player")]
 position = Vector2(513, 506)
 texture = ExtResource("2_bnlaq")
 script = ExtResource("3_h613b")
 next_scene = ExtResource("4_8klcq")
+player = NodePath("../Player")
 
 [node name="EIcon" type="Sprite2D" parent="Hole" unique_id=568795353]
 z_index = 100
@@ -200,13 +201,22 @@ player = NodePath("../../../../Player")
 menu_root = NodePath("../..")
 hole = NodePath("../../..")
 
-[node name="Button2" type="Button" parent="Hole/Control/BoxContainer" unique_id=334916460]
+[node name="Button2" type="Button" parent="Hole/Control/BoxContainer" unique_id=334916460 node_paths=PackedStringArray("player", "menu_root", "hole")]
 layout_mode = 2
 icon = ExtResource("7_ff811")
+script = ExtResource("7_nn3eb")
+player = NodePath("../../../../Player")
+menu_root = NodePath("../..")
+hole = NodePath("../../..")
 
-[node name="Button" type="Button" parent="Hole/Control/BoxContainer" unique_id=2016951839]
+[node name="Button" type="Button" parent="Hole/Control/BoxContainer" unique_id=2016951839 node_paths=PackedStringArray("player", "menu_root", "hole")]
 layout_mode = 2
 icon = ExtResource("8_nn3eb")
+script = ExtResource("7_nn3eb")
+selected_upgrade = 3
+player = NodePath("../../../../Player")
+menu_root = NodePath("../..")
+hole = NodePath("../../..")
 
 [node name="ColorRect" type="ColorRect" parent="Hole/Control" unique_id=172132190]
 z_index = 4095
@@ -453,3 +463,5 @@ layout_mode = 2
 texture = ExtResource("15_suher")
 
 [connection signal="pressed" from="Hole/Control/BoxContainer/Button3" to="Hole/Control/BoxContainer/Button3" method="_on_pressed"]
+[connection signal="pressed" from="Hole/Control/BoxContainer/Button2" to="Hole/Control/BoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Hole/Control/BoxContainer/Button" to="Hole/Control/BoxContainer/Button" method="_on_pressed"]

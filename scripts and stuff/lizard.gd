@@ -20,19 +20,30 @@ var current_health = 4
 var max_shield = 3
 var current_shield = 3
 
+var damage = 10;
+var bullets = 1;
+
 signal health_changed(current_health, max_health)
 signal shield_changed(current_shield, max_shield)
+
+func reset_health_signals():
+	emit_signal("health_changed", current_health, max_health)
+	emit_signal("shield_changed", current_shield, max_shield)
 
 func _ready():
 	emit_signal("health_changed", current_health, max_health)
 	emit_signal("shield_changed", current_shield, max_shield)
 	
+func regen():
+	current_health = max_health;
+	
+	emit_signal("health_changed", current_health, max_health)
+	
+
 func gain_max_health(amount):
 	max_health += amount;
 	current_health += amount;
-	
-	print(max_health, current_health)
-	
+		
 	emit_signal("health_changed", current_health, max_health)
 	
 func gain_shield():
@@ -69,15 +80,18 @@ func die():
 
 # PEW PEW 
 func shoot():
-	var bullet = bullet_scene.instantiate()
-	get_tree().current_scene.add_child(bullet)
+	for i in bullets:
+		var bullet = bullet_scene.instantiate()
+
+		get_tree().current_scene.add_child(bullet)
 	
-	bullet.global_position = $Muzzle.global_position
+		bullet.damage = damage;
+		bullet.global_position = $Muzzle.global_position
 
-	var mouse_pos = get_global_mouse_position()
-	var dir = (mouse_pos - global_position).normalized()
+		var mouse_pos = get_global_mouse_position()
+		var dir = (mouse_pos - global_position).normalized()
 
-	bullet.direction = dir
+		bullet.direction = dir
 
 
 func _input(event: InputEvent) -> void:

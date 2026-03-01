@@ -10,10 +10,18 @@ enum Upgrade { BULLET, DAMAGE, HEALTH, REGEN, SHIELD, ICE, FIRE, SAW }
 func apply_upgrade():
 	match selected_upgrade:
 		Upgrade.HEALTH: 
-			player.gain_max_health(2)
+			player.gain_max_health(2);
+		Upgrade.DAMAGE:
+			player.damage += 10;
+		# Upgrade.BULLET:
+		Upgrade.REGEN:
+			player.regen();
+		# Upgrade.SHIELD:
+		# Upgrade.ICE:
+		# Upgrade.FIRE:
+		# Upgrade.SAW:
 
 func _on_pressed() -> void:
-	print("TEST")
 	apply_upgrade()
 	menu_root.visible = false;
 	hole.active = false;
