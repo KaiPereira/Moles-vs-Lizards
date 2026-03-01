@@ -4,6 +4,7 @@ extends Sprite2D
 
 var level_beat = false
 @onready var icon = $EIcon
+var active = false
 
 var original_y : float
 var float_amplitude : float = 10.0
@@ -24,5 +25,6 @@ func check_all_enemies_gone():
 	var enemies_left = get_tree().get_nodes_in_group("enemies").size()
 	
 	if enemies_left == 0:
+		active = true;
 		visible = true;
 		level_beat = true;

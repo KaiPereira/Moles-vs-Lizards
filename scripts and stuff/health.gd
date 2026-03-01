@@ -10,6 +10,8 @@ extends CanvasLayer
 @export var shield_full: Texture2D
 @export var shield_empty: Texture2D
 
+var shield_regen_rate = 10;
+
 func _ready():
 	if player:
 		player.health_changed.connect(_on_health_changed)
@@ -17,6 +19,11 @@ func _ready():
 		# Initialize display
 		_on_health_changed(player.current_health, player.max_health)
 		_on_shield_changed(player.current_shield, player.max_shield)
+	
+	while (true):
+		await get_tree().create_timer(shield_regen_rate).timeout
+	
+		player.gain_shield();
 
 func _on_health_changed(current, max_val):
 	_update_icon_container(health_container, current, heart_full, heart_empty)

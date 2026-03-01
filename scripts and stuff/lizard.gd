@@ -26,6 +26,19 @@ signal shield_changed(current_shield, max_shield)
 func _ready():
 	emit_signal("health_changed", current_health, max_health)
 	emit_signal("shield_changed", current_shield, max_shield)
+	
+func gain_max_health(amount):
+	max_health += amount;
+	current_health += amount;
+	
+	print(max_health, current_health)
+	
+	emit_signal("health_changed", current_health, max_health)
+	
+func gain_shield():
+	if (current_shield < max_shield):
+		current_shield += 1;
+	emit_signal("shield_changed", current_shield, max_shield)
 
 func kaboom(amount):
 	if current_shield > 0:

@@ -5,10 +5,11 @@
 [ext_resource type="Script" uid="uid://dmg8t023kaurk" path="res://scripts and stuff/level_beat.gd" id="3_h613b"]
 [ext_resource type="PackedScene" uid="uid://cy1t6wtai50w4" path="res://scenes, scenes and scenes/floor2.tscn" id="4_8klcq"]
 [ext_resource type="Texture2D" uid="uid://dtnmd1qy2lx63" path="res://other stuff idk/e_icon.png" id="5_vmfur"]
+[ext_resource type="Texture2D" uid="uid://cp7horsgjvosf" path="res://other stuff idk/upgrades/health_icon.PNG" id="6_ff811"]
 [ext_resource type="Script" uid="uid://cqkx74454v65" path="res://scripts and stuff/enemy_melee.gd" id="6_maal4"]
-[ext_resource type="Texture2D" uid="uid://dh6tao5hai8xm" path="res://other stuff idk/upgrades/bullet_icon.PNG" id="6_vl3eh"]
 [ext_resource type="Texture2D" uid="uid://bjujmq5ks7ew8" path="res://other stuff idk/upgrades/damage_icon.PNG" id="7_ff811"]
 [ext_resource type="Texture2D" uid="uid://duxuahdm85oip" path="res://sprite stuff/mole_melee/mole.png" id="7_gnybe"]
+[ext_resource type="Script" uid="uid://bti7tkav367oc" path="res://scripts and stuff/upgrade.gd" id="7_nn3eb"]
 [ext_resource type="Texture2D" uid="uid://g7w0406egdlh" path="res://sprite stuff/mole_melee/mole_hit.png" id="8_avl6a"]
 [ext_resource type="Texture2D" uid="uid://c5uwabt2m4w45" path="res://other stuff idk/upgrades/regen_icon.PNG" id="8_nn3eb"]
 [ext_resource type="Texture2D" uid="uid://bifi73rlqlfr2" path="res://sprite stuff/mole_ranged/mole_ranged_normal.png" id="9_8klcq"]
@@ -172,28 +173,54 @@ position = Vector2(4, -69)
 scale = Vector2(0.07614968, 0.07614968)
 texture = ExtResource("5_vmfur")
 
-[node name="BoxContainer" type="BoxContainer" parent="Hole" unique_id=1792202619]
+[node name="Control" type="Control" parent="Hole" unique_id=43690688]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="Hole/Control" unique_id=1792202619]
 z_index = 4096
-offset_left = -277.0
-offset_top = -166.0
-offset_right = 2803.0
-offset_bottom = 858.0
-scale = Vector2(0.18178216, 0.18178216)
+layout_mode = 0
+offset_left = -357.0
+offset_top = -191.0
+offset_right = 2747.0
+offset_bottom = 841.0
+scale = Vector2(0.23128638, 0.23128638)
+mouse_filter = 2
 
-[node name="TextureRect3" type="TextureRect" parent="Hole/BoxContainer" unique_id=385306264]
+[node name="Button3" type="Button" parent="Hole/Control/BoxContainer" unique_id=1784726549 node_paths=PackedStringArray("player", "menu_root", "hole")]
 layout_mode = 2
-texture = ExtResource("6_vl3eh")
+action_mode = 0
+icon = ExtResource("6_ff811")
+script = ExtResource("7_nn3eb")
+selected_upgrade = 2
+player = NodePath("../../../../Player")
+menu_root = NodePath("../..")
+hole = NodePath("../../..")
 
-[node name="TextureRect2" type="TextureRect" parent="Hole/BoxContainer" unique_id=1980273160]
+[node name="Button2" type="Button" parent="Hole/Control/BoxContainer" unique_id=334916460]
 layout_mode = 2
-texture = ExtResource("7_ff811")
+icon = ExtResource("7_ff811")
 
-[node name="TextureRect" type="TextureRect" parent="Hole/BoxContainer" unique_id=1521118379]
+[node name="Button" type="Button" parent="Hole/Control/BoxContainer" unique_id=2016951839]
 layout_mode = 2
-texture = ExtResource("8_nn3eb")
+icon = ExtResource("8_nn3eb")
+
+[node name="ColorRect" type="ColorRect" parent="Hole/Control" unique_id=172132190]
+z_index = 4095
+layout_mode = 0
+offset_left = -510.99997
+offset_top = -643.0
+offset_right = -470.99997
+offset_bottom = -603.0
+scale = Vector2(25.500254, 32.380184)
+mouse_filter = 2
+color = Color(0, 0, 0, 0.46666667)
 
 [node name="Enemy_Melee3" type="CharacterBody2D" parent="." unique_id=193918858 groups=["enemies"]]
-position = Vector2(701, 267)
+position = Vector2(778, 215.00003)
 scale = Vector2(0.15486364, 0.15486364)
 script = ExtResource("6_maal4")
 player_path = NodePath("../Player/CollisionShape2D")
@@ -210,7 +237,7 @@ sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
 [node name="Enemy_Melee4" type="CharacterBody2D" parent="." unique_id=1630705944 groups=["enemies"]]
-position = Vector2(272, 732)
+position = Vector2(235, 773.00006)
 scale = Vector2(0.15486364, 0.15486364)
 script = ExtResource("6_maal4")
 player_path = NodePath("../Player/CollisionShape2D")
@@ -227,7 +254,7 @@ sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
 [node name="Enemy_Melee5" type="CharacterBody2D" parent="." unique_id=347693247 groups=["enemies"]]
-position = Vector2(722, 739.00006)
+position = Vector2(757, 772)
 scale = Vector2(0.15486364, 0.15486364)
 script = ExtResource("6_maal4")
 player_path = NodePath("../Player/CollisionShape2D")
@@ -244,7 +271,7 @@ sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
 [node name="Enemy_Melee2" type="CharacterBody2D" parent="." unique_id=942362817 groups=["enemies"]]
-position = Vector2(376, 329)
+position = Vector2(246, 237)
 scale = Vector2(0.15468869, 0.15468869)
 script = ExtResource("6_maal4")
 player_path = NodePath("../Player/CollisionShape2D")
@@ -261,7 +288,7 @@ sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
 [node name="Enemy_Ranged" type="CharacterBody2D" parent="." unique_id=1700474874 groups=["enemies"]]
-position = Vector2(701, 515.99994)
+position = Vector2(624, 668)
 scale = Vector2(0.15468869, 0.15468869)
 script = ExtResource("9_vmfur")
 drill_scene = ExtResource("10_maal4")
@@ -277,7 +304,7 @@ position = Vector2(-4.6792526, -9.525436)
 shape = SubResource("RectangleShape2D_avl6a")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1226964390]
-position = Vector2(428, 755)
+position = Vector2(437, 664)
 scale = Vector2(0.41845703, 0.41845703)
 script = ExtResource("9_vl3eh")
 wobble_speed = 13.0
@@ -335,6 +362,46 @@ texture = ExtResource("17_enjw6")
 layout_mode = 2
 texture = ExtResource("17_enjw6")
 
+[node name="4" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1924190946]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="5" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=536805533]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="6" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1629227790]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="7" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=648478162]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="8" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1430879729]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="9" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=567591547]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="10" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1328416329]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="11" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1307569163]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="12" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=672685602]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="13" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1434007604]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
 [node name="HealthBar" type="HBoxContainer" parent="CanvasLayer/HUD" unique_id=114684621]
 layout_mode = 0
 offset_left = 527.0
@@ -360,3 +427,29 @@ texture = ExtResource("15_suher")
 [node name="4" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1437352935]
 layout_mode = 2
 texture = ExtResource("15_suher")
+
+[node name="5" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1545595821]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[node name="6" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=485462974]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[node name="7" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1167023197]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[node name="8" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=595607029]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[node name="9" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1878697056]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[node name="10" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=12335732]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[connection signal="pressed" from="Hole/Control/BoxContainer/Button3" to="Hole/Control/BoxContainer/Button3" method="_on_pressed"]
