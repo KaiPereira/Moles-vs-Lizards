@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cy1t6wtai50w4"]
+
+[ext_resource type="Texture2D" uid="uid://b2gkvcqtageit" path="res://other stuff idk/tileset.png" id="1_1ued8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44bs4"]
+size = Vector2(1284, 1370)
+
+[node name="Floor2" type="Node2D" unique_id=1881715428]
+
+[node name="Floor 1" type="CharacterBody2D" parent="." unique_id=1421996775]
+
+[node name="Tileset" type="Sprite2D" parent="Floor 1" unique_id=2114552695]
+position = Vector2(512, 512)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1ued8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor 1" unique_id=1673249836]
+position = Vector2(446, 76.00001)
+scale = Vector2(1.4155744, 0.09599999)
+shape = SubResource("RectangleShape2D_44bs4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor 1" unique_id=1733551879]
+position = Vector2(244, 1067)
+scale = Vector2(1.1897792, 0.30983865)
+shape = SubResource("RectangleShape2D_44bs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1" unique_id=2058699204]
+position = Vector2(-123, 481)
+scale = Vector2(0.4444597, 0.5371959)
+shape = SubResource("RectangleShape2D_44bs4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor 1" unique_id=749802064]
+position = Vector2(992.00006, 548)
+scale = Vector2(0.21839333, 0.69479406)
+shape = SubResource("RectangleShape2D_44bs4")

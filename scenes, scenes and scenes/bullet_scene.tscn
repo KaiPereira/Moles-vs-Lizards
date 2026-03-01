@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dj6ul8g4pgpej"]
+
+[ext_resource type="Script" uid="uid://27qa0u56h6p6" path="res://scripts and stuff/bullet.gd" id="1_v8qja"]
+[ext_resource type="Texture2D" uid="uid://c3ajrjid5lm4h" path="res://other stuff idk/gold_projectile.png" id="2_t4vbm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_skisd"]
+size = Vector2(45, 37)
+
+[node name="Bullet" type="Area2D" unique_id=1445118724]
+script = ExtResource("1_v8qja")
+
+[node name="GoldProjectile" type="Sprite2D" parent="." unique_id=760420168]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_t4vbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701708919]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_skisd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

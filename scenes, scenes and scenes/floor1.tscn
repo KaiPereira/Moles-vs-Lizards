@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://dteru8k3fjprp"]
+
+[ext_resource type="Texture2D" uid="uid://b2gkvcqtageit" path="res://other stuff idk/tileset.png" id="1_56rpx"]
+[ext_resource type="Texture2D" uid="uid://bsbxgppu324tb" path="res://other stuff idk/hole.png" id="2_bnlaq"]
+[ext_resource type="Script" uid="uid://dmg8t023kaurk" path="res://scripts and stuff/level_beat.gd" id="3_h613b"]
+[ext_resource type="PackedScene" uid="uid://cy1t6wtai50w4" path="res://scenes, scenes and scenes/floor2.tscn" id="4_8klcq"]
+[ext_resource type="Texture2D" uid="uid://dtnmd1qy2lx63" path="res://other stuff idk/e_icon.png" id="5_vmfur"]
+[ext_resource type="Script" uid="uid://cqkx74454v65" path="res://scripts and stuff/enemy_melee.gd" id="6_maal4"]
+[ext_resource type="Texture2D" uid="uid://duxuahdm85oip" path="res://sprite stuff/mole_melee/mole.png" id="7_gnybe"]
+[ext_resource type="Texture2D" uid="uid://g7w0406egdlh" path="res://sprite stuff/mole_melee/mole_hit.png" id="8_avl6a"]
+[ext_resource type="Texture2D" uid="uid://bifi73rlqlfr2" path="res://sprite stuff/mole_ranged/mole_ranged_normal.png" id="9_8klcq"]
+[ext_resource type="Script" uid="uid://dvoonwye82x8x" path="res://scripts and stuff/lizard.gd" id="9_vl3eh"]
+[ext_resource type="Script" uid="uid://ddy6drojam5vt" path="res://scenes, scenes and scenes/enemy_ranged.gd" id="9_vmfur"]
+[ext_resource type="PackedScene" uid="uid://dj6ul8g4pgpej" path="res://scenes, scenes and scenes/bullet_scene.tscn" id="10_ff811"]
+[ext_resource type="Texture2D" uid="uid://bdnhgcw6kvla4" path="res://sprite stuff/mole_ranged/mole_ranged_shoot.png" id="10_vmfur"]
+[ext_resource type="Texture2D" uid="uid://dhi573j6i6n17" path="res://sprite stuff/mole_ranged/mole_ranged_missingdrill.png" id="11_maal4"]
+[ext_resource type="Texture2D" uid="uid://nr37rkg2nlmv" path="res://sprite stuff/lizards/lizard.png" id="11_nn3eb"]
+[ext_resource type="Texture2D" uid="uid://b4orf2a8f285b" path="res://sprite stuff/lizards/Lizard_Throw.png" id="12_c71t8"]
+[ext_resource type="Texture2D" uid="uid://dfyvhyxhn642b" path="res://sprite stuff/lizards/Lizard_Handshake.png" id="13_hx5ja"]
+[ext_resource type="Script" uid="uid://c3h2o5xujb0w0" path="res://scripts and stuff/health.gd" id="14_isd8o"]
+[ext_resource type="Texture2D" uid="uid://lvmqy47ff61c" path="res://other stuff idk/heart.png" id="15_suher"]
+[ext_resource type="Texture2D" uid="uid://c47yvenvttck1" path="res://other stuff idk/heart_gone.png" id="16_r3141"]
+[ext_resource type="Texture2D" uid="uid://ij68k3sux8eb" path="res://other stuff idk/shield.png" id="17_enjw6"]
+[ext_resource type="Texture2D" uid="uid://cd1cq51hmg7ag" path="res://other stuff idk/shield_gone.png" id="18_8uamk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypqb5"]
+size = Vector2(1284, 1370)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(551.5556, 695.88824)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kek77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gnybe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gnybe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_avl6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gnybe")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnybe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8klcq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8klcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vmfur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_maal4")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avl6a"]
+size = Vector2(303.83652, 494.54175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+size = Vector2(10.535213, 40.384438)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_nn3eb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_c71t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hx5ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nn3eb")
+}],
+"loop": false,
+"name": &"throw",
+"speed": 10.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_lxof7"]
+script/source = "extends HBoxContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_1h3u2"]
+
+[node name="Node2D" type="Node2D" unique_id=20313515]
+position = Vector2(471, 0)
+
+[node name="Floor 1" type="CharacterBody2D" parent="." unique_id=1434710841]
+
+[node name="Tileset" type="Sprite2D" parent="Floor 1" unique_id=202189516]
+position = Vector2(512, 512)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_56rpx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor 1" unique_id=372351664]
+position = Vector2(446, 76.00001)
+scale = Vector2(1.4155744, 0.09599999)
+shape = SubResource("RectangleShape2D_ypqb5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor 1" unique_id=1979556158]
+position = Vector2(244, 1067)
+scale = Vector2(1.1897792, 0.30983865)
+shape = SubResource("RectangleShape2D_ypqb5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1" unique_id=1200933558]
+position = Vector2(-123, 481)
+scale = Vector2(0.4444597, 0.5371959)
+shape = SubResource("RectangleShape2D_ypqb5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor 1" unique_id=1716203531]
+position = Vector2(992.00006, 548)
+scale = Vector2(0.21839333, 0.69479406)
+shape = SubResource("RectangleShape2D_ypqb5")
+
+[node name="Hole" type="Sprite2D" parent="." unique_id=1885946384]
+position = Vector2(513, 506)
+texture = ExtResource("2_bnlaq")
+script = ExtResource("3_h613b")
+next_scene = ExtResource("4_8klcq")
+
+[node name="EIcon" type="Sprite2D" parent="Hole" unique_id=568795353]
+z_index = 100
+position = Vector2(4, -69)
+scale = Vector2(0.07614968, 0.07614968)
+texture = ExtResource("5_vmfur")
+
+[node name="Enemy_Melee3" type="CharacterBody2D" parent="." unique_id=193918858 groups=["enemies"]]
+position = Vector2(701, 267)
+scale = Vector2(0.15486364, 0.15486364)
+script = ExtResource("6_maal4")
+player_path = NodePath("../Player/CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee3" unique_id=1823790907]
+position = Vector2(80.80664, -54.948975)
+scale = Vector2(1.2541106, 1.2541106)
+shape = SubResource("RectangleShape2D_kek77")
+debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee3" unique_id=210085845]
+scale = Vector2(1.2541106, 1.2541106)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"hit"
+
+[node name="Enemy_Melee2" type="CharacterBody2D" parent="." unique_id=942362817 groups=["enemies"]]
+position = Vector2(376, 329)
+scale = Vector2(0.15468869, 0.15468869)
+script = ExtResource("6_maal4")
+player_path = NodePath("../Player/CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee2" unique_id=1979562704]
+position = Vector2(80.80664, -54.948975)
+scale = Vector2(1.2541106, 1.2541106)
+shape = SubResource("RectangleShape2D_kek77")
+debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee2" unique_id=954872461]
+scale = Vector2(1.2541106, 1.2541106)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"hit"
+
+[node name="Enemy_Ranged" type="CharacterBody2D" parent="." unique_id=1700474874 groups=["enemies"]]
+position = Vector2(376, 329)
+scale = Vector2(0.15468869, 0.15468869)
+script = ExtResource("9_vmfur")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Ranged" unique_id=55372101]
+position = Vector2(2275.5386, 2553.5156)
+scale = Vector2(0.8256016, 0.8256016)
+sprite_frames = SubResource("SpriteFrames_gnybe")
+frame_progress = 0.18973611
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Ranged" unique_id=1538122351]
+position = Vector2(2414.5269, 2551.9006)
+shape = SubResource("RectangleShape2D_avl6a")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1226964390]
+position = Vector2(727, 846)
+scale = Vector2(0.41845703, 0.41845703)
+script = ExtResource("9_vl3eh")
+wobble_speed = 13.0
+wobble_radians = 0.1
+bullet_scene = ExtResource("10_ff811")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1493489553]
+position = Vector2(-415.81323, -553.2229)
+scale = Vector2(1.3610135, 1.3610135)
+shape = SubResource("RectangleShape2D_5vw27")
+debug_color = Color(0.9433947, 0.5476431, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2038785877]
+position = Vector2(-427.76215, -621.3304)
+scale = Vector2(0.2469663, 0.2469663)
+sprite_frames = SubResource("SpriteFrames_rj586")
+frame_progress = 1.0
+
+[node name="Muzzle" type="Marker2D" parent="Player" unique_id=1685636097]
+position = Vector2(-518.5718, -621.33026)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=16686659 node_paths=PackedStringArray("player")]
+script = ExtResource("14_isd8o")
+player = NodePath("../Player")
+heart_full = ExtResource("15_suher")
+heart_empty = ExtResource("16_r3141")
+shield_full = ExtResource("17_enjw6")
+shield_empty = ExtResource("18_8uamk")
+
+[node name="HUD" type="Control" parent="CanvasLayer" unique_id=1500344914]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ShieldBar" type="HBoxContainer" parent="CanvasLayer/HUD" unique_id=1527919974]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 106.99999
+offset_right = 4000.0
+offset_bottom = 1226.0
+scale = Vector2(0.047845796, 0.047845796)
+theme_override_constants/separation = 250
+script = SubResource("GDScript_lxof7")
+
+[node name="1" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=411738672]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="2" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=358743823]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="3" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1861463780]
+layout_mode = 2
+texture = ExtResource("17_enjw6")
+
+[node name="HealthBar" type="HBoxContainer" parent="CanvasLayer/HUD" unique_id=114684621]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 40.0
+offset_right = 3845.0
+offset_bottom = 660.0
+scale = Vector2(0.0873883, 0.0873883)
+theme_override_constants/separation = 250
+script = SubResource("GDScript_1h3u2")
+
+[node name="1" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=599770517]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[node name="2" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=612620652]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[node name="3" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=334466948]
+layout_mode = 2
+texture = ExtResource("15_suher")
+
+[node name="4" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1437352935]
+layout_mode = 2
+texture = ExtResource("15_suher")
