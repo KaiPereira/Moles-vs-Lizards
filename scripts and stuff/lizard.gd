@@ -44,6 +44,12 @@ func kaboom(amount):
 	
 	if current_health <= 0:
 		die()
+	
+	var tween = create_tween()
+	
+	modulate = Color.RED
+	
+	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
 
 func die():
 	print("Player Died")

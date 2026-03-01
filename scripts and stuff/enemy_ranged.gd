@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var health: int = 100
+@export var health: int = 50
 @onready var player_node = get_node("../Player")
 @onready var animated_sprite = $AnimatedSprite2D
 @export var drill_scene: PackedScene
 
-@export var speed = 100
+@export var speed = 200
 @export var preferred_distance = 100.0
 @export var distance_tolerance = 10.0
 
@@ -37,7 +37,12 @@ func _physics_process(delta: float) -> void:
 
 func take_damage(amount: int):
 	health -= amount
-	print("Enemy hit! Health remaining: ", health)
+	
+	var tween = create_tween()
+	
+	modulate = Color.ROSY_BROWN
+	
+	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
 	
 	if health <= 0:
 		die()

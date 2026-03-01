@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var wobble_radians = 0.1
 var wobble_time := 0.0
 
-@export var speed = 50
+@export var speed = 80
 var direction = Vector2.ZERO
 
 @export var player_path: NodePath
@@ -12,8 +12,8 @@ var player: Node2D
 @onready var animated_sprite = $AnimatedSprite2D
 
 @export var attack_cooldown = 1.0
-@export var attack_range = 100.0
-@export var hit_distance = 110.0
+@export var attack_range = 150.0
+@export var hit_distance = 150.0
 var can_attack = true
 var is_attacking = false
 
@@ -24,7 +24,12 @@ var is_attacking = false
 
 func take_damage(amount: int):
 	health -= amount
-	print("Enemy hit! Health remaining: ", health)
+	
+	var tween = create_tween()
+	
+	modulate = Color.ROSY_BROWN
+	
+	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
 	
 	if health <= 0:
 		die()
