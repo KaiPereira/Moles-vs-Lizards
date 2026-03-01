@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 @export var wobble_speed = 8.0
 @export var wobble_radians = 0.1
+
 var wobble_time := 0.0
+var rng = RandomNumberGenerator.new()
 
 @export var speed = 80
 var direction = Vector2.ZERO
@@ -22,7 +24,7 @@ var is_attacking = false
 
 @onready var player_node = get_node("../Player")
 
-func take_damage(amount: int):
+func take_damage(amount):
 	health -= amount
 	
 	var tween = create_tween()
@@ -39,6 +41,8 @@ func die():
 	
 	
 func _ready():
+	speed += rng.randi_range(-50, 100);
+	
 	if player_path != null:
 		player = get_node(player_path)
 

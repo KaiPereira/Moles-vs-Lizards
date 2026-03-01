@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @export var speed = 200
 @export var preferred_distance = 100.0
-@export var distance_tolerance = 10.0
+@export var distance_tolerance = 60.0
 
 @export var wobble_speed = 4.0
 @export var wobble_radians = 0.01
@@ -15,7 +15,7 @@ var wobble_time := 0.0
 
 var can_attack = true
 var is_attacking = false
-@export var attack_cooldown: float = 4.0
+@export var attack_cooldown: float = 2.0
 
 func _physics_process(delta: float) -> void:
 	if not player_node:
@@ -28,14 +28,16 @@ func _physics_process(delta: float) -> void:
 	
 	if distance_to_player < (preferred_distance - distance_tolerance):
 		velocity = -direction_to_player * speed
+		animated_sprite.flip_h = true
 	elif distance_to_player > (preferred_distance + distance_tolerance):
 		velocity = direction_to_player * speed
+		animated_sprite.flip_h = false
 	else:
 		start_attack()
 		
 	move_and_slide()
 
-func take_damage(amount: int):
+func take_damage(amount):
 	health -= amount
 	
 	var tween = create_tween()
