@@ -8,6 +8,7 @@ radius = 12.0
 
 [node name="Area2D" type="Area2D" unique_id=105238794]
 rotation = 4.712389
+scale = Vector2(1.4795716, 1.4795716)
 script = ExtResource("1_4jy14")
 
 [node name="DrillProjectile" type="Sprite2D" parent="." unique_id=2090396072]
@@ -18,3 +19,5 @@ texture = ExtResource("2_crs6v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=873061454]
 position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_h4qlr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

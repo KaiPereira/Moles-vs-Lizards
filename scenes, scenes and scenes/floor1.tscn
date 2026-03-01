@@ -84,7 +84,7 @@ animations = [{
 size = Vector2(303.83652, 494.54175)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
-size = Vector2(10.535213, 40.384438)
+size = Vector2(10.535213, 147.4912)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
 animations = [{
@@ -228,7 +228,7 @@ wobble_radians = 0.1
 bullet_scene = ExtResource("10_ff811")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1493489553]
-position = Vector2(4.3616943, 62.910034)
+position = Vector2(4.3620605, 19.117798)
 scale = Vector2(1.3610135, 1.3610135)
 shape = SubResource("RectangleShape2D_5vw27")
 debug_color = Color(0.9433947, 0.5476431, 0, 0.41960785)
