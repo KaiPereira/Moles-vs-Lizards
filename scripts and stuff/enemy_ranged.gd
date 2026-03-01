@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var health: int = 100
 @onready var player_node = get_node("../Player")
 @onready var animated_sprite = $AnimatedSprite2D
+@export var drill_scene: PackedScene
 
 @export var speed = 100
 @export var preferred_distance = 100.0
@@ -14,7 +15,7 @@ var wobble_time := 0.0
 
 var can_attack = true
 var is_attacking = false
-var attack_cooldown: float = 2.0
+@export var attack_cooldown: float = 4.0
 
 func _physics_process(delta: float) -> void:
 	if not player_node:
@@ -59,7 +60,7 @@ func start_attack():
 	
 	await animated_sprite.animation_finished
 	
-	# FIIREEE
+	shoot()
 	
 	await get_tree().create_timer(attack_cooldown).timeout
 	
@@ -67,3 +68,15 @@ func start_attack():
 	
 	can_attack = true
 	is_attacking = false
+
+
+func shoot():
+	var drill = drill_scene.instantiate()
+	get_tree().current_scene.add_child(drill)
+	
+	drill.global_position = global_position
+
+	var dir = global_position.direction_to(player_node.global_position)
+
+	drill.direction = dir
+	drill.rotation = dir.angle() + PI

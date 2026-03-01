@@ -58,7 +58,7 @@ func shoot():
 	var mouse_pos = get_global_mouse_position()
 	var dir = (mouse_pos - global_position).normalized()
 
-	bullet.direction = dir	
+	bullet.direction = dir
 
 
 func _input(event: InputEvent) -> void:

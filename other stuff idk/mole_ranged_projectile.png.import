@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chaiakpyun5xr"
-path="res://.godot/imported/mole_ranged_projectile.png-75a70a7593ce52ca91c1fbc9ffe29eaf.ctex"
+path="res://.godot/imported/mole_ranged_projectile.png-d658cafd32a77eee2271323cd6aca3cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite stuff/mole_ranged/mole_ranged_projectile.png"
-dest_files=["res://.godot/imported/mole_ranged_projectile.png-75a70a7593ce52ca91c1fbc9ffe29eaf.ctex"]
+source_file="res://other stuff idk/mole_ranged_projectile.png"
+dest_files=["res://.godot/imported/mole_ranged_projectile.png-d658cafd32a77eee2271323cd6aca3cd.ctex"]
 
 [params]
 

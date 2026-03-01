@@ -10,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://g7w0406egdlh" path="res://sprite stuff/mole_melee/mole_hit.png" id="8_avl6a"]
 [ext_resource type="Texture2D" uid="uid://bifi73rlqlfr2" path="res://sprite stuff/mole_ranged/mole_ranged_normal.png" id="9_8klcq"]
 [ext_resource type="Script" uid="uid://dvoonwye82x8x" path="res://scripts and stuff/lizard.gd" id="9_vl3eh"]
-[ext_resource type="Script" uid="uid://ddy6drojam5vt" path="res://scenes, scenes and scenes/enemy_ranged.gd" id="9_vmfur"]
+[ext_resource type="Script" uid="uid://ddy6drojam5vt" path="res://scripts and stuff/enemy_ranged.gd" id="9_vmfur"]
 [ext_resource type="PackedScene" uid="uid://dj6ul8g4pgpej" path="res://scenes, scenes and scenes/bullet_scene.tscn" id="10_ff811"]
+[ext_resource type="PackedScene" uid="uid://dp8n7vgpw8ama" path="res://scenes, scenes and scenes/drill_scene.tscn" id="10_maal4"]
 [ext_resource type="Texture2D" uid="uid://bdnhgcw6kvla4" path="res://sprite stuff/mole_ranged/mole_ranged_shoot.png" id="10_vmfur"]
 [ext_resource type="Texture2D" uid="uid://dhi573j6i6n17" path="res://sprite stuff/mole_ranged/mole_ranged_missingdrill.png" id="11_maal4"]
 [ext_resource type="Texture2D" uid="uid://nr37rkg2nlmv" path="res://sprite stuff/lizards/lizard.png" id="11_nn3eb"]
@@ -206,6 +207,7 @@ animation = &"hit"
 position = Vector2(681, 721)
 scale = Vector2(0.15468869, 0.15468869)
 script = ExtResource("9_vmfur")
+drill_scene = ExtResource("10_maal4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Ranged" unique_id=55372101]
 position = Vector2(-143.66754, -7.9107056)
@@ -218,7 +220,7 @@ position = Vector2(-4.6792526, -9.525436)
 shape = SubResource("RectangleShape2D_avl6a")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1226964390]
-position = Vector2(727, 846)
+position = Vector2(428, 755)
 scale = Vector2(0.41845703, 0.41845703)
 script = ExtResource("9_vl3eh")
 wobble_speed = 13.0
@@ -226,19 +228,19 @@ wobble_radians = 0.1
 bullet_scene = ExtResource("10_ff811")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1493489553]
-position = Vector2(-415.81323, -553.2229)
+position = Vector2(4.3616943, 62.910034)
 scale = Vector2(1.3610135, 1.3610135)
 shape = SubResource("RectangleShape2D_5vw27")
 debug_color = Color(0.9433947, 0.5476431, 0, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2038785877]
-position = Vector2(-427.76215, -621.3304)
+position = Vector2(-7.5872498, -5.19751)
 scale = Vector2(0.2469663, 0.2469663)
 sprite_frames = SubResource("SpriteFrames_rj586")
 frame_progress = 1.0
 
 [node name="Muzzle" type="Marker2D" parent="Player" unique_id=1685636097]
-position = Vector2(-518.5718, -621.33026)
+position = Vector2(-98.39688, -5.1973877)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=16686659 node_paths=PackedStringArray("player")]
 script = ExtResource("14_isd8o")
