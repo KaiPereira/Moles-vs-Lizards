@@ -60,7 +60,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_8klcq")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -74,7 +74,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_maal4")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot",
 "speed": 5.0
 }]
@@ -203,18 +203,18 @@ sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
 [node name="Enemy_Ranged" type="CharacterBody2D" parent="." unique_id=1700474874 groups=["enemies"]]
-position = Vector2(376, 329)
+position = Vector2(681, 721)
 scale = Vector2(0.15468869, 0.15468869)
 script = ExtResource("9_vmfur")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Ranged" unique_id=55372101]
-position = Vector2(2275.5386, 2553.5156)
+position = Vector2(-143.66754, -7.9107056)
 scale = Vector2(0.8256016, 0.8256016)
 sprite_frames = SubResource("SpriteFrames_gnybe")
-frame_progress = 0.18973611
+animation = &"shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Ranged" unique_id=1538122351]
-position = Vector2(2414.5269, 2551.9006)
+position = Vector2(-4.6792526, -9.525436)
 shape = SubResource("RectangleShape2D_avl6a")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1226964390]
