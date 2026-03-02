@@ -16,5 +16,4 @@ func _process(delta: float):
 func _on_body_entered(body):
 	if body.has_method("kaboom"):
 		body.kaboom(damage)
-		
 		queue_free()

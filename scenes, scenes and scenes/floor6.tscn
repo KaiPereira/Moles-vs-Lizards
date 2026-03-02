@@ -69,7 +69,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_5q71j")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -83,7 +83,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_5q71j")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot",
 "speed": 5.0
 }]
@@ -264,23 +264,23 @@ scale = Vector2(0.1267186, 0.1267186)
 sprite_frames = SubResource("SpriteFrames_7p5fk")
 
 [node name="boss" type="CharacterBody2D" parent="." unique_id=1791497074 groups=["enemies"]]
-position = Vector2(523, 265)
+position = Vector2(521, 272)
 scale = Vector2(2.0437331, 2.0437331)
 script = ExtResource("12_xqxcd")
 health = 4000
 drill_scene = ExtResource("13_2xwnv")
-projectiles = 10
+projectiles = 5
 attack_cooldown = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss" unique_id=1877026626]
-position = Vector2(7.5, -2)
+position = Vector2(-5.8716097, 5.8716063)
+scale = Vector2(0.10868045, 0.10868045)
 shape = SubResource("RectangleShape2D_7p5fk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="boss" unique_id=1207074605]
 position = Vector2(-14, -1)
 scale = Vector2(0.1267186, 0.1267186)
 sprite_frames = SubResource("SpriteFrames_5q71j")
-animation = &"shoot"
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1226964390 node_paths=PackedStringArray("game_over_screen", "saw_pivot")]
 position = Vector2(437, 664)
