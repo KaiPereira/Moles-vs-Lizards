@@ -12,7 +12,7 @@ func apply_upgrade():
 		Upgrade.HEALTH: 
 			player.gain_max_health(2);
 		Upgrade.DAMAGE:
-			player.upgrade_damage(100);
+			GameManager.damage += 100;
 		# Upgrade.BULLET:
 		Upgrade.REGEN:
 			player.regen();
