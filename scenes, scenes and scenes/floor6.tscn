@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cp7horsgjvosf" path="res://other stuff idk/upgrades/health_icon.PNG" id="8_cisuf"]
 [ext_resource type="Script" uid="uid://ddy6drojam5vt" path="res://scripts and stuff/enemy_ranged.gd" id="12_xqxcd"]
 [ext_resource type="PackedScene" uid="uid://dp8n7vgpw8ama" path="res://scenes, scenes and scenes/drill_scene.tscn" id="13_2xwnv"]
+[ext_resource type="Script" uid="uid://cqkx74454v65" path="res://scripts and stuff/enemy_melee.gd" id="14_2o3l0"]
 [ext_resource type="Texture2D" uid="uid://bn6i8f3k4kgd7" path="res://sprite stuff/lizard_boss/lizard_normal.png" id="14_5q71j"]
-[ext_resource type="Texture2D" uid="uid://bifi73rlqlfr2" path="res://sprite stuff/mole_ranged/mole_ranged_normal.png" id="14_ekfmo"]
 [ext_resource type="Texture2D" uid="uid://cuigl1lrrhih6" path="res://sprite stuff/lizard_boss/lizard_throw.png" id="15_2o3l0"]
-[ext_resource type="Texture2D" uid="uid://bdnhgcw6kvla4" path="res://sprite stuff/mole_ranged/mole_ranged_shoot.png" id="15_idhru"]
+[ext_resource type="Texture2D" uid="uid://duxuahdm85oip" path="res://sprite stuff/mole_melee/mole.png" id="15_30ok5"]
+[ext_resource type="Texture2D" uid="uid://g7w0406egdlh" path="res://sprite stuff/mole_melee/mole_hit.png" id="16_4e6v3"]
 [ext_resource type="Texture2D" uid="uid://d0u0bivh4q3pf" path="res://sprite stuff/lizard_boss/lizard_shake.png" id="16_30ok5"]
-[ext_resource type="Texture2D" uid="uid://dhi573j6i6n17" path="res://sprite stuff/mole_ranged/mole_ranged_missingdrill.png" id="16_upv3o"]
 [ext_resource type="Script" uid="uid://dvoonwye82x8x" path="res://scripts and stuff/lizard.gd" id="17_uh24i"]
 [ext_resource type="PackedScene" uid="uid://dj6ul8g4pgpej" path="res://scenes, scenes and scenes/bullet_scene.tscn" id="18_f4ugg"]
 [ext_resource type="Texture2D" uid="uid://dhlflullyb0ua" path="res://other stuff idk/rooms/saw.png" id="19_yvj21"]
@@ -36,32 +36,7 @@ size = Vector2(1284, 1370)
 metadata/__load_path__ = "res://scenes, scenes and scenes/floor2.tscn"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p5fk"]
-size = Vector2(39, 66)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7p5fk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_ekfmo")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_ekfmo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_idhru")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_upv3o")
-}],
-"loop": false,
-"name": &"shoot",
-"speed": 5.0
-}]
+size = Vector2(229.61255, 531.2591)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5q71j"]
 animations = [{
@@ -85,6 +60,34 @@ animations = [{
 }],
 "loop": false,
 "name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(551.5556, 695.88824)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kek77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_30ok5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_30ok5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4e6v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_30ok5")
+}],
+"loop": false,
+"name": &"hit",
 "speed": 5.0
 }]
 
@@ -231,38 +234,6 @@ scale = Vector2(25.500254, 32.380184)
 mouse_filter = 2
 color = Color(0, 0, 0, 0.46666667)
 
-[node name="Enemy_Ranged5" type="CharacterBody2D" parent="." unique_id=786459124 groups=["enemies"]]
-position = Vector2(893, 509)
-script = ExtResource("12_xqxcd")
-health = 1000
-drill_scene = ExtResource("13_2xwnv")
-attack_cooldown = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Ranged5" unique_id=537800452]
-position = Vector2(7.5, -2)
-shape = SubResource("RectangleShape2D_7p5fk")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Ranged5" unique_id=619072260]
-position = Vector2(-14, -1)
-scale = Vector2(0.1267186, 0.1267186)
-sprite_frames = SubResource("SpriteFrames_7p5fk")
-
-[node name="Enemy_Ranged4" type="CharacterBody2D" parent="." unique_id=339622442 groups=["enemies"]]
-position = Vector2(164, 499)
-script = ExtResource("12_xqxcd")
-health = 1000
-drill_scene = ExtResource("13_2xwnv")
-attack_cooldown = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Ranged4" unique_id=1137494254]
-position = Vector2(7.5, -2)
-shape = SubResource("RectangleShape2D_7p5fk")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Ranged4" unique_id=1258111876]
-position = Vector2(-14, -1)
-scale = Vector2(0.1267186, 0.1267186)
-sprite_frames = SubResource("SpriteFrames_7p5fk")
-
 [node name="boss" type="CharacterBody2D" parent="." unique_id=1791497074 groups=["enemies"]]
 position = Vector2(521, 272)
 scale = Vector2(2.0437331, 2.0437331)
@@ -273,7 +244,7 @@ projectiles = 5
 attack_cooldown = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss" unique_id=1877026626]
-position = Vector2(-5.8716097, 5.8716063)
+position = Vector2(-8.073456, 15.16832)
 scale = Vector2(0.10868045, 0.10868045)
 shape = SubResource("RectangleShape2D_7p5fk")
 
@@ -281,6 +252,78 @@ shape = SubResource("RectangleShape2D_7p5fk")
 position = Vector2(-14, -1)
 scale = Vector2(0.1267186, 0.1267186)
 sprite_frames = SubResource("SpriteFrames_5q71j")
+
+[node name="Enemy_Melee3" type="CharacterBody2D" parent="." unique_id=770262290 groups=["enemies"]]
+position = Vector2(878, 702)
+scale = Vector2(0.15486364, 0.15486364)
+script = ExtResource("14_2o3l0")
+player_path = NodePath("../Player/CollisionShape2D")
+health = 700
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee3" unique_id=2041019612]
+position = Vector2(80.80664, -54.948975)
+scale = Vector2(1.2541106, 1.2541106)
+shape = SubResource("RectangleShape2D_kek77")
+debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee3" unique_id=268134618]
+scale = Vector2(1.2541106, 1.2541106)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"hit"
+
+[node name="Enemy_Melee4" type="CharacterBody2D" parent="." unique_id=980256526 groups=["enemies"]]
+position = Vector2(152, 713.00006)
+scale = Vector2(0.15486364, 0.15486364)
+script = ExtResource("14_2o3l0")
+player_path = NodePath("../Player/CollisionShape2D")
+health = 700
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee4" unique_id=2143809876]
+position = Vector2(80.80664, -54.948975)
+scale = Vector2(1.2541106, 1.2541106)
+shape = SubResource("RectangleShape2D_kek77")
+debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee4" unique_id=342122875]
+scale = Vector2(1.2541106, 1.2541106)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"hit"
+
+[node name="Enemy_Melee5" type="CharacterBody2D" parent="." unique_id=2080913363 groups=["enemies"]]
+position = Vector2(123, 251)
+scale = Vector2(0.15486364, 0.15486364)
+script = ExtResource("14_2o3l0")
+player_path = NodePath("../Player/CollisionShape2D")
+health = 700
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee5" unique_id=356069047]
+position = Vector2(80.80664, -54.948975)
+scale = Vector2(1.2541106, 1.2541106)
+shape = SubResource("RectangleShape2D_kek77")
+debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee5" unique_id=638452506]
+scale = Vector2(1.2541106, 1.2541106)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"hit"
+
+[node name="Enemy_Melee6" type="CharacterBody2D" parent="." unique_id=1841561780 groups=["enemies"]]
+position = Vector2(915, 232.00002)
+scale = Vector2(0.15486364, 0.15486364)
+script = ExtResource("14_2o3l0")
+player_path = NodePath("../Player/CollisionShape2D")
+health = 700
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee6" unique_id=1955894868]
+position = Vector2(80.80664, -54.948975)
+scale = Vector2(1.2541106, 1.2541106)
+shape = SubResource("RectangleShape2D_kek77")
+debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee6" unique_id=937133144]
+scale = Vector2(1.2541106, 1.2541106)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"hit"
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1226964390 node_paths=PackedStringArray("game_over_screen", "saw_pivot")]
 position = Vector2(437, 664)
