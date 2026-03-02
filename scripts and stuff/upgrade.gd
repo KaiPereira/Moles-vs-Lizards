@@ -21,7 +21,8 @@ func apply_upgrade():
 			GameManager.bullets += 1;
 		# Upgrade.ICE:
 		# Upgrade.FIRE:
-		# Upgrade.SAW:
+		Upgrade.SAW:
+			GameManager.saw = true;
 
 func _on_pressed() -> void:
 	apply_upgrade()

@@ -27,6 +27,8 @@ func check_all_enemies_gone():
 	var enemies_left = get_tree().get_nodes_in_group("enemies").size()
 	
 	if enemies_left == 0:
+		await get_tree().create_timer(1.2).timeout
+		
 		active = true;
 		visible = true;
 		level_beat = true;

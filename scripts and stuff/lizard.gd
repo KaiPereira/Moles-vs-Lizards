@@ -10,6 +10,10 @@ extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @export var game_over_screen: Sprite2D
 
+@export var saw_pivot: Node2D
+@export var orbit_speed: float = 5.0
+@export var orbit_radius: float = 100.0
+
 # WOBBLE WOBBLE WALK :D 
 var wobble_time := 0.0
 var is_moving := false
@@ -72,12 +76,12 @@ func kaboom(amount):
 	tween.tween_property(self, "modulate", Color.WHITE, 0.2)
 
 func die():
-	game_over_screen.visible = true;
+	game_over_screen.visible = true
 	await get_tree().create_timer(4.0).timeout
 	
 	GameManager.reset_game()
-	reset_health_signals()
-	get_tree().reload_current_scene()
+	
+	get_tree().change_scene_to_file("res://scenes, scenes and scenes/floor1.tscn")
 
 # PEW PEW 
 func shoot():
@@ -118,6 +122,9 @@ func get_input():
 
 
 func _physics_process(delta):
+	if (GameManager.saw):
+		saw_pivot.visible = true;
+		saw_pivot.rotation += orbit_speed * delta
 	get_input()
 	move_and_slide()
 	

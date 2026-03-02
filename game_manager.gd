@@ -9,6 +9,8 @@ var current_shield = 3
 var damage = 10;
 var bullets = 1;
 
+var saw = false;
+
 signal health_changed(current_health, max_health)
 signal shield_changed(current_shield, max_shield)
 
