@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnpx4gwacamaa"
-path="res://.godot/imported/tileset2.png-fceddefe00f47c235ec06b538ab974b2.ctex"
+uid="uid://bfuv08q8axflp"
+path="res://.godot/imported/room3.png-1c29c117f25bfa962f82278ac780622d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://other stuff idk/tileset2.png"
-dest_files=["res://.godot/imported/tileset2.png-fceddefe00f47c235ec06b538ab974b2.ctex"]
+source_file="res://other stuff idk/rooms/room3.png"
+dest_files=["res://.godot/imported/room3.png-1c29c117f25bfa962f82278ac780622d.ctex"]
 
 [params]
 

@@ -75,6 +75,8 @@ func die():
 	game_over_screen.visible = true;
 	await get_tree().create_timer(4.0).timeout
 	
+	GameManager.reset_game()
+	reset_health_signals()
 	get_tree().reload_current_scene()
 
 # PEW PEW 
@@ -85,13 +87,14 @@ func shoot():
 		get_tree().current_scene.add_child(bullet)
 	
 		bullet.damage = GameManager.damage;
-		bullet.global_position = $Muzzle.global_position
+		bullet.global_position = Vector2($Muzzle.global_position.x + (i - 1 * 10), $Muzzle.global_position.y);
 
 		var mouse_pos = get_global_mouse_position()
 		var dir = (mouse_pos - global_position).normalized()
-
-		bullet.direction = dir
-
+		
+		var spread_amount = 0.5
+		
+		bullet.direction = dir.rotated((i - (GameManager.bullets - 1) / 2.0) * spread_amount)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):

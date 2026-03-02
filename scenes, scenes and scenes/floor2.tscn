@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cy1t6wtai50w4"]
 
-[ext_resource type="Texture2D" uid="uid://b2gkvcqtageit" path="res://other stuff idk/tileset.png" id="1_1ued8"]
-[ext_resource type="Texture2D" uid="uid://bsbxgppu324tb" path="res://other stuff idk/hole.png" id="2_v58d2"]
+[ext_resource type="Texture2D" uid="uid://cnpx4gwacamaa" path="res://other stuff idk/rooms/room2.png" id="1_vtv22"]
+[ext_resource type="Texture2D" uid="uid://fendhsrc8j4i" path="res://other stuff idk/hole2.png" id="2_nrnc1"]
 [ext_resource type="Script" uid="uid://dmg8t023kaurk" path="res://scripts and stuff/level_beat.gd" id="3_nrnc1"]
+[ext_resource type="PackedScene" uid="uid://cd3ynut5xigg8" path="res://scenes, scenes and scenes/floor3.tscn" id="4_8gi32"]
 [ext_resource type="Texture2D" uid="uid://dtnmd1qy2lx63" path="res://other stuff idk/e_icon.png" id="4_kc2wq"]
 [ext_resource type="Texture2D" uid="uid://dh6tao5hai8xm" path="res://other stuff idk/upgrades/bullet_icon.PNG" id="5_vtv22"]
 [ext_resource type="Script" uid="uid://bti7tkav367oc" path="res://scripts and stuff/upgrade.gd" id="6_85ypq"]
@@ -11,6 +12,11 @@
 [ext_resource type="Script" uid="uid://cqkx74454v65" path="res://scripts and stuff/enemy_melee.gd" id="9_7omoi"]
 [ext_resource type="Texture2D" uid="uid://duxuahdm85oip" path="res://sprite stuff/mole_melee/mole.png" id="10_rvh4k"]
 [ext_resource type="Texture2D" uid="uid://g7w0406egdlh" path="res://sprite stuff/mole_melee/mole_hit.png" id="11_b0jhy"]
+[ext_resource type="Script" uid="uid://ddy6drojam5vt" path="res://scripts and stuff/enemy_ranged.gd" id="12_bh74o"]
+[ext_resource type="PackedScene" uid="uid://dp8n7vgpw8ama" path="res://scenes, scenes and scenes/drill_scene.tscn" id="13_l1p6s"]
+[ext_resource type="Texture2D" uid="uid://bifi73rlqlfr2" path="res://sprite stuff/mole_ranged/mole_ranged_normal.png" id="14_p7mhc"]
+[ext_resource type="Texture2D" uid="uid://bdnhgcw6kvla4" path="res://sprite stuff/mole_ranged/mole_ranged_shoot.png" id="15_4pqw0"]
+[ext_resource type="Texture2D" uid="uid://dhi573j6i6n17" path="res://sprite stuff/mole_ranged/mole_ranged_missingdrill.png" id="16_f4b6u"]
 [ext_resource type="Script" uid="uid://dvoonwye82x8x" path="res://scripts and stuff/lizard.gd" id="17_0d2mq"]
 [ext_resource type="PackedScene" uid="uid://dj6ul8g4pgpej" path="res://scenes, scenes and scenes/bullet_scene.tscn" id="18_j6ig0"]
 [ext_resource type="Texture2D" uid="uid://nr37rkg2nlmv" path="res://sprite stuff/lizards/lizard.png" id="19_lr22b"]
@@ -25,9 +31,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypqb5"]
 size = Vector2(1284, 1370)
-
-[sub_resource type="Resource" id="Resource_vtv22"]
-metadata/__load_path__ = "res://scenes, scenes and scenes/floor2.tscn"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
 size = Vector2(551.5556, 695.88824)
@@ -54,6 +57,34 @@ animations = [{
 }],
 "loop": false,
 "name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p5fk"]
+size = Vector2(39, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7p5fk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_p7mhc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_p7mhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4pqw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_f4b6u")
+}],
+"loop": false,
+"name": &"shoot",
 "speed": 5.0
 }]
 
@@ -101,41 +132,41 @@ func _process(delta: float) -> void:
 
 [sub_resource type="GDScript" id="GDScript_1h3u2"]
 
-[node name="Node2D" type="Node2D" unique_id=20313515]
+[node name="Node2D2" type="Node2D" unique_id=20313515]
 position = Vector2(471, 0)
 
-[node name="Floor 1" type="CharacterBody2D" parent="." unique_id=1434710841]
+[node name="Floor 2" type="CharacterBody2D" parent="." unique_id=1434710841]
 
-[node name="Tileset" type="Sprite2D" parent="Floor 1" unique_id=202189516]
+[node name="Tileset" type="Sprite2D" parent="Floor 2" unique_id=202189516]
 position = Vector2(512, 512)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_1ued8")
+texture = ExtResource("1_vtv22")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor 1" unique_id=372351664]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor 2" unique_id=372351664]
 position = Vector2(446, 76.00001)
 scale = Vector2(1.4155744, 0.09599999)
 shape = SubResource("RectangleShape2D_ypqb5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor 1" unique_id=1979556158]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor 2" unique_id=1979556158]
 position = Vector2(244, 1067)
 scale = Vector2(1.1897792, 0.30983865)
 shape = SubResource("RectangleShape2D_ypqb5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1" unique_id=1200933558]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 2" unique_id=1200933558]
 position = Vector2(-123, 481)
 scale = Vector2(0.4444597, 0.5371959)
 shape = SubResource("RectangleShape2D_ypqb5")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor 1" unique_id=1716203531]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor 2" unique_id=1716203531]
 position = Vector2(992.00006, 548)
 scale = Vector2(0.21839333, 0.69479406)
 shape = SubResource("RectangleShape2D_ypqb5")
 
 [node name="Hole" type="Sprite2D" parent="." unique_id=1885946384 node_paths=PackedStringArray("player")]
 position = Vector2(513, 506)
-texture = ExtResource("2_v58d2")
+texture = ExtResource("2_nrnc1")
 script = ExtResource("3_nrnc1")
-next_scene = SubResource("Resource_vtv22")
+next_scene = ExtResource("4_8gi32")
 player = NodePath("../Player")
 
 [node name="EIcon" type="Sprite2D" parent="Hole" unique_id=568795353]
@@ -174,6 +205,7 @@ hole = NodePath("../../..")
 layout_mode = 2
 icon = ExtResource("7_acwhp")
 script = ExtResource("6_85ypq")
+selected_upgrade = 4
 player = NodePath("../../../../Player")
 menu_root = NodePath("../..")
 hole = NodePath("../../..")
@@ -282,6 +314,20 @@ debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
 scale = Vector2(1.2541106, 1.2541106)
 sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
+
+[node name="Enemy_Ranged" type="CharacterBody2D" parent="." unique_id=954866430 groups=["enemies"]]
+position = Vector2(577, 752)
+script = ExtResource("12_bh74o")
+drill_scene = ExtResource("13_l1p6s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Ranged" unique_id=2093862794]
+position = Vector2(7.5, -2)
+shape = SubResource("RectangleShape2D_7p5fk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Ranged" unique_id=412103613]
+position = Vector2(-14, -1)
+scale = Vector2(0.1267186, 0.1267186)
+sprite_frames = SubResource("SpriteFrames_7p5fk")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1226964390 node_paths=PackedStringArray("game_over_screen")]
 position = Vector2(437, 664)
