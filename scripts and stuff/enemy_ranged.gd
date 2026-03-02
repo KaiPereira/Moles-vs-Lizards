@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var speed = 200
 @export var preferred_distance = 100.0
 @export var distance_tolerance = 60.0
+@export var projectiles = 1
 
 @export var wobble_speed = 4.0
 @export var wobble_radians = 0.01
@@ -78,12 +79,16 @@ func start_attack():
 
 
 func shoot():
-	var drill = drill_scene.instantiate()
-	get_tree().current_scene.add_child(drill)
-	
-	drill.global_position = global_position
+	for i in projectiles:
+		var drill = drill_scene.instantiate()
+		get_tree().current_scene.add_child(drill)
+		
+		drill.global_position = global_position
 
-	var dir = global_position.direction_to(player_node.global_position)
+		var dir = global_position.direction_to(player_node.global_position)
 
-	drill.direction = dir
-	drill.rotation = dir.angle() + PI
+		drill.rotation = dir.angle() + PI
+		
+		var spread_amount = 0.5
+		
+		drill.direction = dir.rotated((i - (projectiles - 1) / 2.0) * spread_amount)
