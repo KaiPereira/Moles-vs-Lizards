@@ -12,11 +12,12 @@ func apply_upgrade():
 		Upgrade.HEALTH: 
 			player.gain_max_health(2);
 		Upgrade.DAMAGE:
-			player.damage += 10;
+			player.upgrade_damage(100);
 		# Upgrade.BULLET:
 		Upgrade.REGEN:
 			player.regen();
-		# Upgrade.SHIELD:
+		Upgrade.SHIELD:
+			player.gain_max_shield();
 		# Upgrade.ICE:
 		# Upgrade.FIRE:
 		# Upgrade.SAW:

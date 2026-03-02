@@ -14,11 +14,11 @@ var shield_regen_rate = 10;
 
 func _ready():
 	if player:
-		player.health_changed.connect(_on_health_changed)
-		player.shield_changed.connect(_on_shield_changed)
+		GameManager.health_changed.connect(_on_health_changed)
+		GameManager.shield_changed.connect(_on_shield_changed)
 		# Initialize display
-		_on_health_changed(player.current_health, player.max_health)
-		_on_shield_changed(player.current_shield, player.max_shield)
+		_on_health_changed(GameManager.current_health, GameManager.max_health)
+		_on_shield_changed(GameManager.current_shield, GameManager.max_shield)
 	
 	while (true):
 		await get_tree().create_timer(shield_regen_rate).timeout

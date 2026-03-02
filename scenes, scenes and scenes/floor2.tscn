@@ -4,36 +4,35 @@
 [ext_resource type="Texture2D" uid="uid://bsbxgppu324tb" path="res://other stuff idk/hole.png" id="2_v58d2"]
 [ext_resource type="Script" uid="uid://dmg8t023kaurk" path="res://scripts and stuff/level_beat.gd" id="3_nrnc1"]
 [ext_resource type="Texture2D" uid="uid://dtnmd1qy2lx63" path="res://other stuff idk/e_icon.png" id="4_kc2wq"]
-[ext_resource type="Texture2D" uid="uid://cp7horsgjvosf" path="res://other stuff idk/upgrades/health_icon.PNG" id="5_8gi32"]
+[ext_resource type="Texture2D" uid="uid://dh6tao5hai8xm" path="res://other stuff idk/upgrades/bullet_icon.PNG" id="5_vtv22"]
 [ext_resource type="Script" uid="uid://bti7tkav367oc" path="res://scripts and stuff/upgrade.gd" id="6_85ypq"]
-[ext_resource type="Texture2D" uid="uid://bjujmq5ks7ew8" path="res://other stuff idk/upgrades/damage_icon.PNG" id="7_1ejbs"]
+[ext_resource type="Texture2D" uid="uid://c0yusdetrtq8b" path="res://other stuff idk/upgrades/shield_icon.PNG" id="7_acwhp"]
 [ext_resource type="Texture2D" uid="uid://c5uwabt2m4w45" path="res://other stuff idk/upgrades/regen_icon.PNG" id="8_o35rm"]
 [ext_resource type="Script" uid="uid://cqkx74454v65" path="res://scripts and stuff/enemy_melee.gd" id="9_7omoi"]
 [ext_resource type="Texture2D" uid="uid://duxuahdm85oip" path="res://sprite stuff/mole_melee/mole.png" id="10_rvh4k"]
 [ext_resource type="Texture2D" uid="uid://g7w0406egdlh" path="res://sprite stuff/mole_melee/mole_hit.png" id="11_b0jhy"]
-[ext_resource type="Script" uid="uid://ddy6drojam5vt" path="res://scripts and stuff/enemy_ranged.gd" id="12_bh74o"]
-[ext_resource type="PackedScene" uid="uid://dp8n7vgpw8ama" path="res://scenes, scenes and scenes/drill_scene.tscn" id="13_l1p6s"]
-[ext_resource type="Texture2D" uid="uid://bifi73rlqlfr2" path="res://sprite stuff/mole_ranged/mole_ranged_normal.png" id="14_p7mhc"]
-[ext_resource type="Texture2D" uid="uid://bdnhgcw6kvla4" path="res://sprite stuff/mole_ranged/mole_ranged_shoot.png" id="15_4pqw0"]
-[ext_resource type="Texture2D" uid="uid://dhi573j6i6n17" path="res://sprite stuff/mole_ranged/mole_ranged_missingdrill.png" id="16_f4b6u"]
 [ext_resource type="Script" uid="uid://dvoonwye82x8x" path="res://scripts and stuff/lizard.gd" id="17_0d2mq"]
 [ext_resource type="PackedScene" uid="uid://dj6ul8g4pgpej" path="res://scenes, scenes and scenes/bullet_scene.tscn" id="18_j6ig0"]
 [ext_resource type="Texture2D" uid="uid://nr37rkg2nlmv" path="res://sprite stuff/lizards/lizard.png" id="19_lr22b"]
 [ext_resource type="Texture2D" uid="uid://b4orf2a8f285b" path="res://sprite stuff/lizards/Lizard_Throw.png" id="20_qh2v7"]
 [ext_resource type="Texture2D" uid="uid://dfyvhyxhn642b" path="res://sprite stuff/lizards/Lizard_Handshake.png" id="21_cdeuv"]
 [ext_resource type="Script" uid="uid://c3h2o5xujb0w0" path="res://scripts and stuff/health.gd" id="22_0fyqq"]
+[ext_resource type="Texture2D" uid="uid://cva7hcbleqqrf" path="res://other stuff idk/game_over.png" id="22_vtv22"]
 [ext_resource type="Texture2D" uid="uid://lvmqy47ff61c" path="res://other stuff idk/heart.png" id="23_h4ij0"]
 [ext_resource type="Texture2D" uid="uid://c47yvenvttck1" path="res://other stuff idk/heart_gone.png" id="24_7lc24"]
 [ext_resource type="Texture2D" uid="uid://ij68k3sux8eb" path="res://other stuff idk/shield.png" id="25_hgg8a"]
 [ext_resource type="Texture2D" uid="uid://cd1cq51hmg7ag" path="res://other stuff idk/shield_gone.png" id="26_hkh3f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbag3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypqb5"]
 size = Vector2(1284, 1370)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5nxw"]
+[sub_resource type="Resource" id="Resource_vtv22"]
+metadata/__load_path__ = "res://scenes, scenes and scenes/floor2.tscn"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
 size = Vector2(551.5556, 695.88824)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6ee7i"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kek77"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -58,38 +57,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lwn1g"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_p7mhc")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_p7mhc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_4pqw0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_f4b6u")
-}],
-"loop": false,
-"name": &"shoot",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwg3u"]
-size = Vector2(303.83652, 494.54175)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxeti"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
 size = Vector2(10.535213, 114.12991)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hlite"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rj586"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -114,7 +85,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_rlk45"]
+[sub_resource type="GDScript" id="GDScript_lxof7"]
 script/source = "extends HBoxContainer
 
 
@@ -128,59 +99,59 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="GDScript" id="GDScript_nnkdp"]
+[sub_resource type="GDScript" id="GDScript_1h3u2"]
 
-[node name="Floor2" type="Node2D" unique_id=1881715428]
+[node name="Node2D" type="Node2D" unique_id=20313515]
 position = Vector2(471, 0)
 
-[node name="Floor 1" type="CharacterBody2D" parent="." unique_id=1613369912]
+[node name="Floor 1" type="CharacterBody2D" parent="." unique_id=1434710841]
 
-[node name="Tileset" type="Sprite2D" parent="Floor 1" unique_id=2014340852]
+[node name="Tileset" type="Sprite2D" parent="Floor 1" unique_id=202189516]
 position = Vector2(512, 512)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_1ued8")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor 1" unique_id=256179583]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor 1" unique_id=372351664]
 position = Vector2(446, 76.00001)
 scale = Vector2(1.4155744, 0.09599999)
-shape = SubResource("RectangleShape2D_dbag3")
+shape = SubResource("RectangleShape2D_ypqb5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor 1" unique_id=326142279]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor 1" unique_id=1979556158]
 position = Vector2(244, 1067)
 scale = Vector2(1.1897792, 0.30983865)
-shape = SubResource("RectangleShape2D_dbag3")
+shape = SubResource("RectangleShape2D_ypqb5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1" unique_id=121201799]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor 1" unique_id=1200933558]
 position = Vector2(-123, 481)
 scale = Vector2(0.4444597, 0.5371959)
-shape = SubResource("RectangleShape2D_dbag3")
+shape = SubResource("RectangleShape2D_ypqb5")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor 1" unique_id=886789600]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor 1" unique_id=1716203531]
 position = Vector2(992.00006, 548)
 scale = Vector2(0.21839333, 0.69479406)
-shape = SubResource("RectangleShape2D_dbag3")
+shape = SubResource("RectangleShape2D_ypqb5")
 
-[node name="Hole" type="Sprite2D" parent="." unique_id=4726791 node_paths=PackedStringArray("player")]
+[node name="Hole" type="Sprite2D" parent="." unique_id=1885946384 node_paths=PackedStringArray("player")]
 position = Vector2(513, 506)
 texture = ExtResource("2_v58d2")
 script = ExtResource("3_nrnc1")
-next_scene = null
+next_scene = SubResource("Resource_vtv22")
 player = NodePath("../Player")
 
-[node name="EIcon" type="Sprite2D" parent="Hole" unique_id=349026475]
+[node name="EIcon" type="Sprite2D" parent="Hole" unique_id=568795353]
 z_index = 100
 position = Vector2(4, -69)
 scale = Vector2(0.07614968, 0.07614968)
 texture = ExtResource("4_kc2wq")
 
-[node name="Control" type="Control" parent="Hole" unique_id=431071822]
+[node name="Control" type="Control" parent="Hole" unique_id=43690688]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="BoxContainer" type="BoxContainer" parent="Hole/Control" unique_id=523032455]
+[node name="BoxContainer" type="BoxContainer" parent="Hole/Control" unique_id=1792202619]
 z_index = 4096
 layout_mode = 0
 offset_left = -357.0
@@ -190,34 +161,33 @@ offset_bottom = 841.0
 scale = Vector2(0.23128638, 0.23128638)
 mouse_filter = 2
 
-[node name="Button3" type="Button" parent="Hole/Control/BoxContainer" unique_id=680807176 node_paths=PackedStringArray("player", "menu_root", "hole")]
+[node name="Button3" type="Button" parent="Hole/Control/BoxContainer" unique_id=1784726549 node_paths=PackedStringArray("player", "menu_root", "hole")]
 layout_mode = 2
 action_mode = 0
-icon = ExtResource("5_8gi32")
+icon = ExtResource("5_vtv22")
 script = ExtResource("6_85ypq")
-selected_upgrade = 2
-player = NodePath("")
+player = NodePath("../../../../Player")
 menu_root = NodePath("../..")
 hole = NodePath("../../..")
 
-[node name="Button2" type="Button" parent="Hole/Control/BoxContainer" unique_id=630165216 node_paths=PackedStringArray("player", "menu_root", "hole")]
+[node name="Button2" type="Button" parent="Hole/Control/BoxContainer" unique_id=334916460 node_paths=PackedStringArray("player", "menu_root", "hole")]
 layout_mode = 2
-icon = ExtResource("7_1ejbs")
+icon = ExtResource("7_acwhp")
 script = ExtResource("6_85ypq")
-player = NodePath("")
+player = NodePath("../../../../Player")
 menu_root = NodePath("../..")
 hole = NodePath("../../..")
 
-[node name="Button" type="Button" parent="Hole/Control/BoxContainer" unique_id=1952095899 node_paths=PackedStringArray("player", "menu_root", "hole")]
+[node name="Button" type="Button" parent="Hole/Control/BoxContainer" unique_id=2016951839 node_paths=PackedStringArray("player", "menu_root", "hole")]
 layout_mode = 2
 icon = ExtResource("8_o35rm")
 script = ExtResource("6_85ypq")
 selected_upgrade = 3
-player = NodePath("")
+player = NodePath("../../../../Player")
 menu_root = NodePath("../..")
 hole = NodePath("../../..")
 
-[node name="ColorRect" type="ColorRect" parent="Hole/Control" unique_id=968889816]
+[node name="ColorRect" type="ColorRect" parent="Hole/Control" unique_id=172132190]
 z_index = 4095
 layout_mode = 0
 offset_left = -510.99997
@@ -228,113 +198,116 @@ scale = Vector2(25.500254, 32.380184)
 mouse_filter = 2
 color = Color(0, 0, 0, 0.46666667)
 
-[node name="Enemy_Melee3" type="CharacterBody2D" parent="." unique_id=2146769915 groups=["enemies"]]
+[node name="Enemy_Melee3" type="CharacterBody2D" parent="." unique_id=193918858 groups=["enemies"]]
 position = Vector2(778, 215.00003)
 scale = Vector2(0.15486364, 0.15486364)
 script = ExtResource("9_7omoi")
 player_path = NodePath("../Player/CollisionShape2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee3" unique_id=353423918]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee3" unique_id=1823790907]
 position = Vector2(80.80664, -54.948975)
 scale = Vector2(1.2541106, 1.2541106)
-shape = SubResource("RectangleShape2D_e5nxw")
+shape = SubResource("RectangleShape2D_kek77")
 debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee3" unique_id=789313686]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee3" unique_id=210085845]
 scale = Vector2(1.2541106, 1.2541106)
-sprite_frames = SubResource("SpriteFrames_6ee7i")
+sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
-[node name="Enemy_Melee4" type="CharacterBody2D" parent="." unique_id=1463333218 groups=["enemies"]]
+[node name="Enemy_Melee6" type="CharacterBody2D" parent="." unique_id=1839981226 groups=["enemies"]]
+position = Vector2(495, 481)
+scale = Vector2(0.15486364, 0.15486364)
+script = ExtResource("9_7omoi")
+player_path = NodePath("../Player/CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee6" unique_id=552857187]
+position = Vector2(80.80664, -54.948975)
+scale = Vector2(1.2541106, 1.2541106)
+shape = SubResource("RectangleShape2D_kek77")
+debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee6" unique_id=1552538478]
+scale = Vector2(1.2541106, 1.2541106)
+sprite_frames = SubResource("SpriteFrames_kek77")
+animation = &"hit"
+
+[node name="Enemy_Melee4" type="CharacterBody2D" parent="." unique_id=1630705944 groups=["enemies"]]
 position = Vector2(235, 773.00006)
 scale = Vector2(0.15486364, 0.15486364)
 script = ExtResource("9_7omoi")
 player_path = NodePath("../Player/CollisionShape2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee4" unique_id=1176540593]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee4" unique_id=336375149]
 position = Vector2(80.80664, -54.948975)
 scale = Vector2(1.2541106, 1.2541106)
-shape = SubResource("RectangleShape2D_e5nxw")
+shape = SubResource("RectangleShape2D_kek77")
 debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee4" unique_id=1374444411]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee4" unique_id=1464321086]
 scale = Vector2(1.2541106, 1.2541106)
-sprite_frames = SubResource("SpriteFrames_6ee7i")
+sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
-[node name="Enemy_Melee5" type="CharacterBody2D" parent="." unique_id=1602149819 groups=["enemies"]]
+[node name="Enemy_Melee5" type="CharacterBody2D" parent="." unique_id=347693247 groups=["enemies"]]
 position = Vector2(757, 772)
 scale = Vector2(0.15486364, 0.15486364)
 script = ExtResource("9_7omoi")
 player_path = NodePath("../Player/CollisionShape2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee5" unique_id=846745554]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee5" unique_id=551496254]
 position = Vector2(80.80664, -54.948975)
 scale = Vector2(1.2541106, 1.2541106)
-shape = SubResource("RectangleShape2D_e5nxw")
+shape = SubResource("RectangleShape2D_kek77")
 debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee5" unique_id=410636188]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee5" unique_id=534423911]
 scale = Vector2(1.2541106, 1.2541106)
-sprite_frames = SubResource("SpriteFrames_6ee7i")
+sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
-[node name="Enemy_Melee2" type="CharacterBody2D" parent="." unique_id=1663912763 groups=["enemies"]]
+[node name="Enemy_Melee2" type="CharacterBody2D" parent="." unique_id=942362817 groups=["enemies"]]
 position = Vector2(246, 237)
 scale = Vector2(0.15468869, 0.15468869)
 script = ExtResource("9_7omoi")
 player_path = NodePath("../Player/CollisionShape2D")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee2" unique_id=785503897]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Melee2" unique_id=1979562704]
 position = Vector2(80.80664, -54.948975)
 scale = Vector2(1.2541106, 1.2541106)
-shape = SubResource("RectangleShape2D_e5nxw")
+shape = SubResource("RectangleShape2D_kek77")
 debug_color = Color(0.8871674, 0.43859467, 0, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee2" unique_id=1278067396]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Melee2" unique_id=954872461]
 scale = Vector2(1.2541106, 1.2541106)
-sprite_frames = SubResource("SpriteFrames_6ee7i")
+sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"hit"
 
-[node name="Enemy_Ranged" type="CharacterBody2D" parent="." unique_id=1432717450 groups=["enemies"]]
-position = Vector2(624, 668)
-scale = Vector2(0.15468869, 0.15468869)
-script = ExtResource("12_bh74o")
-drill_scene = ExtResource("13_l1p6s")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy_Ranged" unique_id=764168080]
-position = Vector2(-143.66754, -7.9107056)
-scale = Vector2(0.8256016, 0.8256016)
-sprite_frames = SubResource("SpriteFrames_lwn1g")
-animation = &"shoot"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Ranged" unique_id=1164925368]
-position = Vector2(-4.6792526, -9.525436)
-shape = SubResource("RectangleShape2D_kwg3u")
-
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1201425856]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1226964390 node_paths=PackedStringArray("game_over_screen")]
 position = Vector2(437, 664)
 scale = Vector2(0.41845703, 0.41845703)
 script = ExtResource("17_0d2mq")
 wobble_speed = 13.0
 wobble_radians = 0.1
 bullet_scene = ExtResource("18_j6ig0")
+game_over_screen = NodePath("../GameOver")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2003569444]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1493489553]
 position = Vector2(4.3620605, 15.533081)
 scale = Vector2(1.3610135, 1.3610135)
-shape = SubResource("RectangleShape2D_qxeti")
+shape = SubResource("RectangleShape2D_5vw27")
 debug_color = Color(0.9433947, 0.5476431, 0, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1412537566]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=2038785877]
 position = Vector2(-7.5872498, -5.19751)
 scale = Vector2(0.2469663, 0.2469663)
-sprite_frames = SubResource("SpriteFrames_hlite")
+sprite_frames = SubResource("SpriteFrames_rj586")
+frame_progress = 1.0
 
-[node name="Muzzle" type="Marker2D" parent="Player" unique_id=447109542]
+[node name="Muzzle" type="Marker2D" parent="Player" unique_id=1685636097]
 position = Vector2(-98.39688, -5.1973877)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=222159466 node_paths=PackedStringArray("player")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=16686659 node_paths=PackedStringArray("player")]
 script = ExtResource("22_0fyqq")
 player = NodePath("../Player")
 heart_full = ExtResource("23_h4ij0")
@@ -342,13 +315,13 @@ heart_empty = ExtResource("24_7lc24")
 shield_full = ExtResource("25_hgg8a")
 shield_empty = ExtResource("26_hkh3f")
 
-[node name="HUD" type="Control" parent="CanvasLayer" unique_id=2034160071]
+[node name="HUD" type="Control" parent="CanvasLayer" unique_id=1500344914]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ShieldBar" type="HBoxContainer" parent="CanvasLayer/HUD" unique_id=388121434]
+[node name="ShieldBar" type="HBoxContainer" parent="CanvasLayer/HUD" unique_id=1527919974]
 layout_mode = 0
 offset_left = 530.0
 offset_top = 106.99999
@@ -356,61 +329,61 @@ offset_right = 4000.0
 offset_bottom = 1226.0
 scale = Vector2(0.047845796, 0.047845796)
 theme_override_constants/separation = 250
-script = SubResource("GDScript_rlk45")
+script = SubResource("GDScript_lxof7")
 
-[node name="1" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1793791275]
+[node name="1" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=411738672]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="2" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=782715642]
+[node name="2" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=358743823]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="3" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1754680670]
+[node name="3" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1861463780]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="4" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=451284882]
+[node name="4" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1924190946]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="5" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1180515971]
+[node name="5" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=536805533]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="6" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1599082382]
+[node name="6" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1629227790]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="7" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1500287194]
+[node name="7" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=648478162]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="8" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1146003723]
+[node name="8" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1430879729]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="9" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=103665750]
+[node name="9" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=567591547]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="10" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=2063046116]
+[node name="10" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1328416329]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="11" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1738360516]
+[node name="11" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1307569163]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="12" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1533287814]
+[node name="12" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=672685602]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="13" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1621341161]
+[node name="13" type="TextureRect" parent="CanvasLayer/HUD/ShieldBar" unique_id=1434007604]
 layout_mode = 2
 texture = ExtResource("25_hgg8a")
 
-[node name="HealthBar" type="HBoxContainer" parent="CanvasLayer/HUD" unique_id=1209668625]
+[node name="HealthBar" type="HBoxContainer" parent="CanvasLayer/HUD" unique_id=114684621]
 layout_mode = 0
 offset_left = 527.0
 offset_top = 40.0
@@ -418,47 +391,54 @@ offset_right = 3845.0
 offset_bottom = 660.0
 scale = Vector2(0.0873883, 0.0873883)
 theme_override_constants/separation = 250
-script = SubResource("GDScript_nnkdp")
+script = SubResource("GDScript_1h3u2")
 
-[node name="1" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1423118654]
+[node name="1" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=599770517]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="2" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1959730034]
+[node name="2" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=612620652]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="3" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=441376742]
+[node name="3" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=334466948]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="4" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=592366963]
+[node name="4" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1437352935]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="5" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=198536363]
+[node name="5" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1545595821]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="6" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1275516420]
+[node name="6" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=485462974]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="7" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=299799090]
+[node name="7" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1167023197]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="8" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1289366432]
+[node name="8" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=595607029]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="9" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1331630970]
+[node name="9" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1878697056]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
 
-[node name="10" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=1007197140]
+[node name="10" type="TextureRect" parent="CanvasLayer/HUD/HealthBar" unique_id=12335732]
 layout_mode = 2
 texture = ExtResource("23_h4ij0")
+
+[node name="GameOver" type="Sprite2D" parent="." unique_id=582792956]
+visible = false
+z_index = 4096
+position = Vector2(512, 512)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("22_vtv22")
 
 [connection signal="pressed" from="Hole/Control/BoxContainer/Button3" to="Hole/Control/BoxContainer/Button3" method="_on_pressed"]
 [connection signal="pressed" from="Hole/Control/BoxContainer/Button2" to="Hole/Control/BoxContainer/Button2" method="_on_pressed"]
