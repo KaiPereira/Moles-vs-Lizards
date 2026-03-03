@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cd3ynut5xigg8"]
 
-[ext_resource type="Texture2D" uid="uid://bgvs0ltufm4hv" path="res://other stuff idk/rooms/room4.png" id="1_0jgrg"]
-[ext_resource type="Texture2D" uid="uid://fendhsrc8j4i" path="res://other stuff idk/hole2.png" id="2_0jgrg"]
+[ext_resource type="Texture2D" uid="uid://bfuv08q8axflp" path="res://other stuff idk/rooms/room3.png" id="1_cffbj"]
+[ext_resource type="Texture2D" uid="uid://bsbxgppu324tb" path="res://other stuff idk/hole.png" id="2_1jvho"]
 [ext_resource type="Script" uid="uid://dmg8t023kaurk" path="res://scripts and stuff/level_beat.gd" id="3_cffbj"]
 [ext_resource type="Texture2D" uid="uid://dtnmd1qy2lx63" path="res://other stuff idk/e_icon.png" id="4_1jvho"]
 [ext_resource type="PackedScene" uid="uid://d2kx2oxdm64hc" path="res://scenes, scenes and scenes/floor4.tscn" id="4_cffbj"]
@@ -141,7 +141,7 @@ position = Vector2(471, 0)
 [node name="Tileset" type="Sprite2D" parent="Floor 3" unique_id=202189516]
 position = Vector2(512, 512)
 scale = Vector2(0.5851264, 0.5851264)
-texture = ExtResource("1_0jgrg")
+texture = ExtResource("1_cffbj")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor 3" unique_id=372351664]
 position = Vector2(446, 76.00001)
@@ -165,7 +165,7 @@ shape = SubResource("RectangleShape2D_ypqb5")
 
 [node name="Hole" type="Sprite2D" parent="." unique_id=1885946384 node_paths=PackedStringArray("player")]
 position = Vector2(513, 506)
-texture = ExtResource("2_0jgrg")
+texture = ExtResource("2_1jvho")
 script = ExtResource("3_cffbj")
 next_scene = ExtResource("4_cffbj")
 player = NodePath("../Player")
